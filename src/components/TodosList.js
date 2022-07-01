@@ -10,12 +10,22 @@ import TodoItem from "./TodoItem";
 // ];
 
 const TodosList = () => {
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.todos.todos);
+  const filter = useSelector((state) => state.filter);
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "all") {
+      return true;
+    }
+    if (filter === "complete" && todo.isComplete) {
+      return true;
+    }
+    if (filter === "incomplete" && !todo.isComplete) return true;
+  });
 
   return (
     <div>
-      <h3>Your Todos</h3>
-      {todos.map((todo) => (
+      {filteredTodos.map((todo) => (
         <TodoItem todo={todo} key={todo.id} />
       ))}
     </div>
