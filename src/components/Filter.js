@@ -1,7 +1,6 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { showAll, showComplete, showIncomplete } from "../redux";
-import todosReducer from "../redux/todos/todosReducer";
 
 const Filter = () => {
   // const filter = useSelector((state) => state.filter);

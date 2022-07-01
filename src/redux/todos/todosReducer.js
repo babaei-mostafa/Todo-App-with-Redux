@@ -8,10 +8,6 @@ const initialState = {
   ],
 };
 
-// const initialState = {
-//   todos: [],
-// };
-
 const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case TODOS_ACTIONS.ADD_TODO:
